@@ -10,6 +10,8 @@ public class Examen {
 		
 		
 		System.out.println(UtilidadesExamen.calcularPromedio(numeros));
+		
+		System.out.println(UtilidadesExamen.encontrarExtremos(numeros));
 
 	}
 
