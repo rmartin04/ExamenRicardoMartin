@@ -27,20 +27,21 @@ public class UtilidadesExamen {
 
 	}
 
-	public static int calcularPromedio(int[] numeros) {
+	public static double calcularPromedio(int[] numeros) {
 		int suma = 0;
+		double promedio = 0;
 		for (int valores : numeros) {
 			suma += valores;
 
 		}
-		int promedio = suma / numeros.length;
+	  promedio = suma/(numeros.length);
 
 		return promedio;
 	}
 
 	public static int[] encontrarExtremos(int[]numeros) {
-		int menor = 0;
-		int mayor = 0;
+		int menor = Integer.MAX_VALUE;
+		int mayor = Integer.MIN_VALUE;
 		for (int i=0;i<numeros.length;i++) {
 			if (numeros[i]<menor ) {
 				menor=numeros[i];
@@ -55,5 +56,27 @@ public class UtilidadesExamen {
 		
 		return valores;
 		
-	}	
+	}
+	
+	public static int[]filtrarMayoresQuePromedio(int[]numeros,double promedio){
+		int contador = 0;
+		for (int numero : numeros) {
+			if (numero>promedio) {
+				contador ++;
+			}
+		}
+		
+		int[]mayoresPromedio = new int[contador];
+		int posicionArray = 0;
+		for (int numero : numeros) {
+			if(numero>promedio) {
+				mayoresPromedio[posicionArray++]= numero;
+				//posicionArray++;
+			}
+		}
+		
+		return mayoresPromedio;
+		
+		
+	}
 }

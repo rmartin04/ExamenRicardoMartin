@@ -9,9 +9,12 @@ public class Examen {
 		UtilidadesExamen.mostrarArray(numeros);
 		
 		
-		System.out.println(UtilidadesExamen.calcularPromedio(numeros));
+		double promedio = UtilidadesExamen.calcularPromedio(numeros);
+		System.out.println("Promedio :"+ promedio);
 		
-		System.out.println(UtilidadesExamen.encontrarExtremos(numeros));
+		//System.out.println(UtilidadesExamen.encontrarExtremos(numeros));
+		int[]mayoresPromedio = UtilidadesExamen.filtrarMayoresQuePromedio(numeros, promedio);
+		UtilidadesExamen.calcularPromedio(mayoresPromedio);
 
 	}
 
